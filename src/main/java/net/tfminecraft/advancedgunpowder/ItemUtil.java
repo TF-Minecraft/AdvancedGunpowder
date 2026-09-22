@@ -1,4 +1,4 @@
-package me.Plugins.AdvancedGunpowder;
+package net.tfminecraft.advancedgunpowder;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;

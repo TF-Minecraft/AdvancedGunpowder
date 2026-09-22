@@ -1,4 +1,4 @@
-package me.Plugins.AdvancedGunpowder;
+package net.tfminecraft.advancedgunpowder;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

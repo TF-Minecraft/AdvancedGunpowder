@@ -1,4 +1,4 @@
-main: me.Plugins.AdvancedGunpowder.GunpowderMain
+main: net.tfminecraft.advancedgunpowder.GunpowderMain
 api-version: '1.21.10'
 name: AdvancedGunpowder
 version: ${project.version}
