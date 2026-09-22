@@ -27,6 +27,8 @@ public class GunpowderMain extends JavaPlugin{
 	public void reloadConfigCommand() {
 		loader.loadConfig(config);
 	}
+	// Keep the existing legacy text representation, formatting, and exact-string comparisons.
+	@SuppressWarnings("deprecation")
 	public void reloadConfigPCommand(Player p) {
 		p.sendMessage(ChatColor.GREEN + "[AdvancedGunpowder]" + ChatColor.YELLOW + " Reloading plugin...");
 		this.reloadConfig();
