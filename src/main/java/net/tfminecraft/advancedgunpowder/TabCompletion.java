@@ -1,4 +1,4 @@
-package me.Plugins.AdvancedGunpowder;
+package net.tfminecraft.advancedgunpowder;
 
 import java.io.File;
 import java.util.ArrayList;
