@@ -83,7 +83,7 @@ public class GunpowderEvents implements Listener{
         			loaded = nbtTags.getPersistentDataContainer().get(isLoaded, PersistentDataType.INTEGER);
         		}
         		if(loaded == 0) return;
-        		PotionEffect slow = new PotionEffect(PotionEffectType.SLOW, (int) Math.floor(w.getReloadTime()*20), 2, false, false);
+                PotionEffect slow = new PotionEffect(PotionEffectType.SLOWNESS, (int) Math.floor(w.getReloadTime()*20), 2, false, false);
         		p.addPotionEffect(slow);
         		isEquipping.put(p, true);
         		Double time = w.getEquipTime();
@@ -100,13 +100,13 @@ public class GunpowderEvents implements Listener{
         					p.sendTitle(" ", "§eEquipping... §7" + t/10 + "§es", 1, 20, 5);
         				} else {
         					p.sendTitle(" ", "§eEquipped!", 1, 20, 10);
-        	        		p.removePotionEffect(PotionEffectType.SLOW);
+                            p.removePotionEffect(PotionEffectType.SLOWNESS);
         					isEquipping.put(p, false);
         					equippedItem.put(p, i);
         					this.cancel();
         				}
         				if(!p.getInventory().getItemInMainHand().equals(i) || isEquipping.get(p) == false) {
-        					p.removePotionEffect(PotionEffectType.SLOW);
+                            p.removePotionEffect(PotionEffectType.SLOWNESS);
         					isEquipping.put(p, false);
         					this.cancel();
         				}
@@ -306,7 +306,7 @@ public class GunpowderEvents implements Listener{
 		ItemMeta model = item.getItemMeta();
 		model.setCustomModelData(w.getLoadingModel());
 		item.setItemMeta(model);
-		PotionEffect slow = new PotionEffect(PotionEffectType.SLOW, (int) Math.floor(w.getReloadTime())*20, 2, false, false);
+        PotionEffect slow = new PotionEffect(PotionEffectType.SLOWNESS, (int) Math.floor(w.getReloadTime())*20, 2, false, false);
 		p.addPotionEffect(slow);
 		isReloading.put(p, true);
 		Double time = w.getReloadTime();
@@ -344,13 +344,13 @@ public class GunpowderEvents implements Listener{
 	        			cbm.addChargedProjectile(new ItemStack(Material.ARROW, 1));
 	        			item.setItemMeta(cbm);
 	        		}
-	        		p.removePotionEffect(PotionEffectType.SLOW);
+                    p.removePotionEffect(PotionEffectType.SLOWNESS);
 					equippedItem.put(p, item);
 	        		isReloading.put(p, false);
 					this.cancel();
 				}
 				if(!p.getInventory().getItemInMainHand().equals(item)) {
-					p.removePotionEffect(PotionEffectType.SLOW);
+                    p.removePotionEffect(PotionEffectType.SLOWNESS);
 					isReloading.put(p, false);
 					ItemMeta model = item.getItemMeta();
 	        		model.setCustomModelData(w.getModel());
